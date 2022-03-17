@@ -1,16 +1,15 @@
 const panelQuestion = {
-  name: "blabla",
   questionOne: {
-    question: "est-ce la première question?",
-    answer: "oui c'est la première question",
+    question: "Est-ce la première question?",
+    answer: "Oui c'est la première question",
   },
   questionTwo: {
-    question: "est-ce la deuxième question?",
-    answer: "oui c'est la deuxième question",
+    question: "Est-ce la deuxième question?",
+    answer: "oui",
   },
   questionThree: {
-    question: "est-ce la troisième question?",
-    answer: "oui c'est la troisième question",
+    question: "Est-ce la troisième question?",
+    answer: "Oui c'est la troisième question",
   },
 };
 

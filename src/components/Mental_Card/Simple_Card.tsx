@@ -1,19 +1,51 @@
 import React from "react";
 
-const Card = (props: any) => {
-  const [showingOneFaceOfCard, setShowingOneFaceOfCard] = React.useState(
-    props.question
-  );
+const SimpleCard = (props: any) => {
+  const [showingOneFaceOfCard, setShowingOneFaceOfCard] = React.useState(true);
+
   return (
     <div>
       <h1>FlashCard Website</h1>
       {/* <p>{showingOneFaceOfCard}</p> */}
-      <button onClick={() => setShowingOneFaceOfCard(showingOneFaceOfCard)}>
-        {showingOneFaceOfCard}
+      <button onClick={() => setShowingOneFaceOfCard(!showingOneFaceOfCard)}>
+        {showingOneFaceOfCard ? (
+          <p>{props.product.questionOne.question}</p>
+        ) : (
+          <p>{props.product.questionOne.answer}</p>
+        )}
+        {/* <p>{props.question}</p> */}
       </button>
-      {/* <p>{props.question}</p> */}
     </div>
   );
 };
 
-export default Card;
+export default SimpleCard;
+
+// --------------------------------------Brouillon----------------------------------
+// ------------Pour random----------------------------------------------------------
+
+// function randomQuestion (value: any) {
+//   const result = Math.floor(Math.random() * value.length)
+//   return console.log(result);
+// };
+
+// const SimpleCard = (props: any) => {
+//   const [showingOneFaceOfCard, setShowingOneFaceOfCard] = React.useState(true);
+
+//   return (
+//     <div>
+//       <h1>FlashCard Website</h1>
+//       {/* <p>{showingOneFaceOfCard}</p> */}
+//       <button onClick={() => setShowingOneFaceOfCard(!showingOneFaceOfCard)}>
+//         {showingOneFaceOfCard ? (
+//           <p>{randomQuestion(props)}</p>
+//         ) : (
+//           <p>{props.product.questionOne.answer}</p>
+//         )}
+//         {/* <p>{props.question}</p> */}
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default SimpleCard;
