@@ -1,18 +1,15 @@
 import React from "react";
 // import logo from "./logo.svg";
 import "./App.css";
-import questionAndAnswer from "./data/questionAndAnswer";
+import panelQuestion from "./data/questionAndAnswer";
 // import Card from "../src/Simple_Card";
-import FinalCardTest from "../src/index2";
+import FinalCardTest from "./components/Mental_Card/index2";
 
 function App() {
   return (
-    <div className="App">
-      <div id="app" className="container default-flex">
-        <header className="App-header"></header>
-        <FinalCardTest />
-        <FinalCardTest product={questionAndAnswer} />
-      </div>
+    <div id="app" className="container default-flex">
+      {/* <header className="App-header"></header> */}
+      <FinalCardTest product={panelQuestion} />
     </div>
   );
 }
