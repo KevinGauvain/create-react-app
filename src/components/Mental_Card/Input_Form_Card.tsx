@@ -5,6 +5,7 @@ const InputCard = (props: any) => {
     props.product.questionTwo.question
   );
   const [text, setText] = React.useState("");
+  const [turn, setTurn] = React.useState(true);
 
   function handleInputText(data: any) {
     if (data.target.value === props.product.questionTwo.answer) {
@@ -38,14 +39,22 @@ const InputCard = (props: any) => {
     );
   };
 
-  // const secondFaceOfCard = () => {
-  //   return (
-  //     <div>
-  //       {handleInputText}
-  //     </div>
-  //   );
-  // };
-  const final = firstFaceOfCard();
+  const secondFaceOfCard = () => {
+    return <div>{handleInputText}</div>;
+  };
+
+  const finalCardTurn = () => {
+    return (
+      <div>
+        <button onClick={() => setTurn(!turn)}>
+          {turn ? firstFaceOfCard() : secondFaceOfCard()}
+          {/* <p>{props.question}</p> */}
+        </button>
+      </div>
+    );
+  };
+
+  const final = finalCardTurn();
   return <div>{final}</div>;
 };
 // const [faceRightOrWrong, setfaceRightOrWrong] = React.useState(true);
