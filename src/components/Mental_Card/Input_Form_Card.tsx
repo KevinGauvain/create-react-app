@@ -1,53 +1,59 @@
 import React from "react";
 
 const InputCard = (props: any) => {
-  const [testing, setTesting] = React.useState(true);
-  // const [faceTwoUpdate, setFaceTwoUpdate] = React.useState(true);
-
-  // const inputOuPas = (data: any) => {
-  //   const result = data.target.value;
-  //   data.preventDefault();
-  //   console.log("c'est un test : ", result);
-  // };
+  const [face, setFace] = React.useState(true);
 
   const [isAnswer, setIsAnswer] = React.useState("");
 
-  function handleInputText(data: any) {
-    if (data.target.value === "oui") {
-      return setIsAnswer("Right !");
+  function controlInputText() {
+    if (isAnswer === props.product.questionTwo.answer) {
+      return `Right ! The good answer is : ${props.product.questionTwo.answer}`;
+    } else if (isAnswer === "") {
+      return `Wrong ! The good answer is => ${props.product.questionTwo.answer}`;
     } else {
-      return setIsAnswer("Wrong !");
+      return `Wrong ! The good answer is => ${props.product.questionTwo.answer}`;
     }
   }
 
   return (
     <div>
-      {testing ? (
+      {face ? (
         <div>
           <label htmlFor="firstNameString">
             {props.product.questionTwo.question}
           </label>
-          <form>
+          <form onSubmit={controlInputText}>
             <input
               type="text"
               className="form-control"
               placeholder="Type your answer"
+              onChange={(event) => setIsAnswer(event.target.value)}
             />
             <button
+              type="submit"
               className="btn btn-primary"
-              onClick={() => setTesting(!testing)}
-              onSubmit={(event) => handleInputText(event)}
+              onClick={() => setFace(!face)}
             >
               Submit
             </button>
           </form>
         </div>
       ) : (
-        <button onClick={() => setTesting(!testing)}></button>
+        <button onClick={() => setFace(!face)}>{controlInputText()}</button>
       )}
     </div>
   );
 };
+
+// -
+// -
+// -
+// -
+// -
+// -
+// --------------------------ATTENTION !!! => EXPORT FONCTION TOUT EN BAS !!! A LA FIN DU BROUILLON------------------------------------
+
+// --------------------------------------------------Brouillon----------------------------------------------------------------------
 
 //   return (
 //     <div>

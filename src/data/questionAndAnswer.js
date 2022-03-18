@@ -1,15 +1,15 @@
 const panelQuestion = {
   questionOne: {
-    question: "Est-ce la première question?",
-    answer: "Oui c'est la première question",
+    question: "Quelle est la capitale de la France ?",
+    answer: "Paris",
   },
   questionTwo: {
-    question: "Est-ce la deuxième question?",
-    answer: "oui",
+    question: "Quelle est la capitale de l'Angleterre ?",
+    answer: "Londres",
   },
   questionThree: {
-    question: "Est-ce la troisième question?",
-    answer: "Oui c'est la troisième question",
+    question: "Quelle est la capitale de l'Allemagne ?",
+    answer: "Berlin",
   },
 };
 
