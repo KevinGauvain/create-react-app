@@ -2,47 +2,121 @@ import React from "react";
 
 const InputCard = (props: any) => {
   const [testing, setTesting] = React.useState(true);
+  const [faceTwoUpdate, setFaceTwoUpdate] = React.useState(true);
 
-  function test() {
-    return (
-      <div>
-        <label htmlFor="firstNameString">Right</label>
-        <p>Right ! Good answer !</p>
-      </div>
-    );
-  }
-
-  const test2 = () => {
-    return (
-      <div>
-        <label htmlFor="firstNameString">Wrong</label>
-        <p>Wrong ! Not the good answer !</p>
-      </div>
-    );
-  };
+  // const inputOuPas = (data: any) => {
+  //   const result = data.target.value;
+  //   data.preventDefault();
+  //   console.log("c'est un test : ", result);
+  // };
 
   return (
     <div>
-      <label htmlFor="firstNameString">
-        {props.product.questionTwo.question}
-      </label>
-      <form>
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Type your answer"
-        />
-        <button
-          className="btn btn-primary"
-          onClick={() => setTesting(!testing)}
-        >
-          Submit
-        </button>
-        {testing ? <p>{test()}</p> : <p>{test2()}</p>}
-      </form>
+      {testing ? (
+        <div>
+          <label htmlFor="firstNameString">
+            {props.product.questionTwo.question}
+          </label>
+          <form>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Type your answer"
+            />
+            <button
+              className="btn btn-primary"
+              onClick={() => setTesting(!testing)}
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      ) : (
+        <button onClick={() => setTesting(!testing)}></button>
+      )}
     </div>
   );
 };
+
+//   return (
+//     <div>
+//       <label htmlFor="firstNameString">
+//         {props.product.questionTwo.question}
+//       </label>
+//       <form>
+//         <input
+//           type="text"
+//           className="form-control"
+//           placeholder="Type your answer"
+//         />
+//         <button
+//           className="btn btn-primary"
+//           onClick={() => setTesting(!testing)}
+//         >
+//           Submit
+//         </button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// const test2 = () => {
+//   return (
+//     <div>
+//       <label htmlFor="firstNameString"></label>
+//       <button onClick={() => setTesting(!testing)}>
+//         {" "}
+//         Not the good answer !
+//       </button>
+//     </div>
+//   );
+// };
+
+// const test3 = () => {
+//   return (
+//     <div>
+//       <label htmlFor="firstNameString"></label>
+//       <button onClick={() => setTesting(!testing)}>
+//         {" "}
+//         Right ! Good answer !
+//       </button>
+//     </div>
+//   );
+// };
+
+// function handleInputText(data: any) {
+//   if (data.target.value === "oui") {
+//     return test2();
+//   } else {
+//     return test3();
+//   }
+// }
+
+// const result = handleInputText();
+
+//   return (
+//     <div>
+//       {/* <label htmlFor="firstNameString">
+//         {props.product.questionTwo.question}
+//       </label>
+//       <form>
+//         <input
+//           type="text"
+//           className="form-control"
+//           placeholder="Type your answer"
+//         />
+//         <button
+//           className="btn btn-primary"
+//           onClick={() => setTesting(!testing)}
+//         >
+//           Submit
+//         </button> */}
+//       {/* <p>{test()}</p> */}
+//       {test()}
+//       {/* </form> */}
+//     </div>
+//   );
+// };
 
 //   const [showingOneFaceOfCard, setShowingOneFaceOfCard] = React.useState(
 //     props.product.questionTwo.question
