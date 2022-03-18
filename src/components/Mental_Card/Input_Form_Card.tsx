@@ -2,13 +2,23 @@ import React from "react";
 
 const InputCard = (props: any) => {
   const [testing, setTesting] = React.useState(true);
-  const [faceTwoUpdate, setFaceTwoUpdate] = React.useState(true);
+  // const [faceTwoUpdate, setFaceTwoUpdate] = React.useState(true);
 
   // const inputOuPas = (data: any) => {
   //   const result = data.target.value;
   //   data.preventDefault();
   //   console.log("c'est un test : ", result);
   // };
+
+  const [isAnswer, setIsAnswer] = React.useState("");
+
+  function handleInputText(data: any) {
+    if (data.target.value === "oui") {
+      return setIsAnswer("Right !");
+    } else {
+      return setIsAnswer("Wrong !");
+    }
+  }
 
   return (
     <div>
@@ -26,6 +36,7 @@ const InputCard = (props: any) => {
             <button
               className="btn btn-primary"
               onClick={() => setTesting(!testing)}
+              onSubmit={(event) => handleInputText(event)}
             >
               Submit
             </button>
