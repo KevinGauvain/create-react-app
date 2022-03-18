@@ -7,7 +7,11 @@ const InputCard = (props: any) => {
 
   function controlInputText() {
     if (isAnswer === props.product.questionTwo.answer) {
-      return `Right ! The good answer is : ${props.product.questionTwo.answer}`;
+      return (
+        <div>
+          Right ! The good answer is : {props.product.questionTwo.answer}
+        </div>
+      );
     } else if (isAnswer === "") {
       return `Wrong ! The good answer is => ${props.product.questionTwo.answer}`;
     } else {
@@ -26,7 +30,7 @@ const InputCard = (props: any) => {
             <input
               type="text"
               className="form-control"
-              placeholder="Type your answer"
+              placeholder="Capital letter expected"
               onChange={(event) => setIsAnswer(event.target.value)}
             />
             <button
